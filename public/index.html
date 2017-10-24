@@ -1,0 +1,57 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>Quarantine</title>
+<meta name="description" content="Quarantine">
+<meta name="author" content="Brian Blackwell">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/> <!--320-->
+
+
+<link rel="stylesheet" href="css/style.css?v=1.0">
+
+</head>
+
+<body> 
+<div id="wrapper" class="">
+    <ul id="mainMenu" class="domobj full slides">
+        <li id="loadLevel" class="domobj">
+            <ul id="ownerLevels" class="domobj">
+                <li class='listItem'>Your Levels</li>
+            </ul>
+            <ul id="publicLevels" class="domobj">
+                <li class='listItem'>Public snapshots</li>
+            </ul>
+        </li>
+    </ul>
+    <ul id="pauseMenu" class="domobj full slides">
+        <li id="resumeGame" class="domobj">Resume</li>
+        <li id="quitGame" class="domobj">Quit</li>
+    </ul>
+    <ul id="stats" class="domobj full slides">
+        <li id="okayStats" class="domobj">Okay</li>
+    </ul>
+
+    <ul id="gameView" class="domobj full slides">
+        <li><canvas id="canvas" class="domobj full"></canvas></li>
+        <li> 
+            <ul class="full">
+                <li id="pauseGame" class="domobj">Quit</li>
+                <li id="nextWeapon" class="domobj">Next Weapon</li>
+                <li id="activate" class="domobj">Activate</li>
+                <li id="weaponOptions" class="domobj">
+            </ul>
+        </li>
+        </li>
+        
+    </ul>
+</div>
+
+<script src="https://webglfundamentals.org/webgl/resources/webgl-utils.js"></script>
+<script src="https://webglfundamentals.org/webgl/resources/m4.js"></script>
+
+<script src="js/bundle.js"></script>
+</body>
+</html>

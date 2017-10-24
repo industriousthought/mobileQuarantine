@@ -1,0 +1,187 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>Quarantine</title>
+<meta name="description" content="Quarantine">
+<meta name="author" content="Brian Blackwell">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/> <!--320-->
+
+
+<link rel="stylesheet" href="css/style.css?v=1.0">
+
+</head>
+
+<body> 
+
+<div id="wrapper" class="">
+    <ul id="mainMenu" class="domobj full slides">
+        <li id="newLevel" class="domobj">
+            New Level
+        </li>
+        <li id="loadLevel" class="domobj">
+            <ul id="ownerLevels" class="domobj">
+                <li class='listItem'>Your Levels</li>
+            </ul>
+            <ul id="publicLevels" class="domobj">
+                <li class='listItem'>Public snapshots</li>
+            </ul>
+        </li>
+    </ul>
+
+    <ul id="gameView" class="domobj full slides">
+        <li class="domobj genericListItem">
+
+        </li>
+        <li class="domobj hidden" id="modal">
+            <span id="modalMsg" class="domobj"></span>
+            <br/>
+            <button id="modalAck" class="domobj">Okay</button>
+        </li>
+        <li><canvas id="canvas" class="domobj full"></canvas></li>
+        <li> 
+            <ul>
+                <li>
+                    <ul id="levelMenu" class="menus domobj">
+                        <li id="levelName" class="domobj">
+                            <input type="text" id="levelName" class="domobj">
+                        </li>
+                        <li id="saveLevel" class="domobj">Save Level</li>
+                        <li id="newObject" class="domobj">New Object</li>
+                        <li id="allObjects" class="domobj">All Objects</li>
+                        <li id="mainMenuButton" class="domobj">Main Menu</li>
+                        <li>
+                            <ul id="levelMenuObjs" class="domobj">
+                                <li class='listItem'>Selected Objs</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <ul id="worldInspector" class="menus domobj">
+                        <li class="listItem">
+                            Number of Entities: <span id="entityCount" class="domobj"></span>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <ul id="objInspector" class="menus domobj">
+                        <li class="listItem">
+                            <button id="cloneObj" class="domobj">Clone Obj</button>
+                            <button id="deleteObj" class="domobj">Delete Obj</button>
+                            <button id="focusObj" class="domobj">Focus Obj</button>
+                        </li>
+                        <li class="listItem">
+                            <h3>Object Type</h3>
+                            <select id="objType" class="domobj">
+
+                            </select>
+                        </li>
+                        <li class="listItem">
+                            <h3>Object Name</h3>
+                            <input type="text" id="objName" class="domobj">
+                        </li>
+                        <li class="listItem">
+                            <h3>Object Id</h3>
+                            <input type="text" id="objId" class="domobj" readonly="readonly">
+                        </li>
+                        <li class="listItem">
+                            <h3>X Pos</h3>
+                            <input type="text" id="objXPos" class="domobj">
+                        </li>
+                        <li class="listItem">
+                            <h3>Y Pos</h3>
+                            <input type="text" id="objYPos" class="domobj">
+                        </li>
+                        <li class="listItem">
+                            <h3>Rotation</h3>
+                            <input type="text" id="objRotation" class="domobj">
+                        </li>
+                        <li id="radiusInputItem" class="circleGeometry domobj">
+                            <h3>Radius</h3>
+                            <input type="text" id="objRadius" class="domobj">
+                        </li>
+                        <li id="widthInputItem" class="squareGeometry domobj">
+                            <h3>Width</h3>
+                            <input type="text" id="objWidth" class="domobj">
+                        </li>
+                        <li id="heightInputItem" class="squareGeometry domobj">
+                            <h3>Height</h3>
+                            <input type="text" id="objHeight" class="domobj">
+                        </li>
+                        <li id="startInputItem" class="spawnerBase domobj">
+                            <h3>Start Spawning</h3>
+                            <input type="text" id="objStart" class="domobj">
+                        </li>
+                        <li id="IntervalInputItem" class="spawnerBase domobj">
+                            <h3>Interval</h3>
+                            <input type="text" id="objInterval" class="domobj">
+                        </li>
+                        <li id="spawnCountInputItem" class="spawnerBase domobj">
+                            <h3>SpawnCount</h3>
+                            <input type="text" id="objSpawnCount" class="domobj">
+                        </li>
+                        <li id="speedInputItem" class="doorType domobj">
+                            <h3>Speed</h3>
+                            <input type="text" id="objSpeed" class="domobj">
+                        </li>
+                        <li id="closePosXInputItem" class="doorType domobj">
+                            <h3>Closed Pos X</h3>
+                            <input type="text" id="objClosePosX" class="domobj">
+                        </li>
+                        <li id="closePosYInputItem" class="doorType domobj">
+                            <h3>Closed Pos Y</h3>
+                            <input type="text" id="objClosePosY" class="domobj">
+                        </li>
+                        <li id="closePosRotInputItem" class="doorType domobj">
+                            <h3>Closed Pos Rot</h3>
+                            <input type="text" id="objClosePosRot" class="domobj">
+                        </li>
+                        <li id="openPosXInputItem" class="doorType domobj">
+                            <h3>Opened Pos X</h3>
+                            <input type="text" id="objOpenPosX" class="domobj">
+                        </li>
+                        <li id="openPosYInputItem" class="doorType domobj">
+                            <h3>Opened Pos Y</h3>
+                            <input type="text" id="objOpenPosY" class="domobj">
+                        </li>
+                        <li id="openPosRotInputItem" class="doorType domobj">
+                            <h3>Opened Pos Rot</h3>
+                            <input type="text" id="objOpenPosRot" class="domobj">
+                        </li>
+                        <li id="openedInputItem" class="doorType domobj">
+                            <h3>Opened</h3>
+                            <input type="text" id="objOpened" class="domobj">
+                        </li>
+                        <li id="exisitingTriggersInputItem" class="areaType domobj">
+                            <ul id="existingTriggersList" class="domobj">
+                            </ul>
+                        </li>
+                        <li id="triggerInputItem" class="areaType domobj">
+                            <button id="addTriggerButton" class="domobj">Add Trigger</button>
+                            <select id="triggerTypeSelector" class="domobj">
+                            </select>
+                            <select id="targetNameSelector" class="domobj">
+                            </select>
+                            <select id="verbSelector" class="domobj">
+                            </select>
+
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        
+    </ul>
+</div>
+
+<script src="https://webglfundamentals.org/webgl/resources/webgl-utils.js"></script>
+<script src="https://webglfundamentals.org/webgl/resources/m4.js"></script>
+<!--script src="http://industriousthought.com:1337/vorlon.js"></script-->
+
+
+<script src="js/editor-bundle.js"></script>
+</body>
+</html>

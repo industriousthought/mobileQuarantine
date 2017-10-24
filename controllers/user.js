@@ -8,6 +8,14 @@ const User = require('../models/User');
  * GET /login
  * Login page.
  */
+exports.getId = (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    if (req.user) {
+        return res.send(JSON.stringify(req.user));
+    }
+    res.send(JSON.stringify(null));
+};
+
 exports.getLogin = (req, res) => {
   if (req.user) {
     return res.redirect('/');
